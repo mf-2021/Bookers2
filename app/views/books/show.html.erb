@@ -1,1 +1,13 @@
-<h1>Bookdetailページです</h1>
+<h1>Bookdetail</h1>
+<div>
+  <%= @user.name %>
+</div>
+<div>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format:"jpeg", fallback: "no_image.jpg" %>
+</div>
+<div>
+  <%= @book.title %>
+</div>
+<div>
+  <%= @book.body %>
+</div>
