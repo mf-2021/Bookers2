@@ -49,10 +49,10 @@
                 <%= link_to "About", about_path, class: "fas fa-link nav-link text-light" %>
               </li>
               <li>
-                <%= link_to "Sign up", new_user_registration_path, class: "fas fa-user-plus nav-link text-light" %>
+                <%= link_to "sign up", new_user_registration_path, class: "fas fa-user-plus nav-link text-light" %>
               </li>
               <li>
-                <%= link_to "Login", user_session_path, class: "fas fa-sign-in-alt nav-link text-light" %>
+                <%= link_to "login", new_user_session_path, class: "fas fa-sign-in-alt nav-link text-light" %>
               </li>
             </ul>
           </div>
@@ -62,10 +62,6 @@
     </header>
 
     <%= flash[:notice] %>
-
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
 
     <%= yield %>
 
