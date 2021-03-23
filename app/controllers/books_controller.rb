@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :logged_in_user, only: [:edit]
+
   def new
     @book = Book.new
   end
@@ -53,4 +55,14 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
   end
 
+  # beforeフィルター
+
+  #ログイン済みユーザーかどうか確認
+
+  def logged_in_user
+    book = Book.find(params[:id])
+    unless current_user.id == book.user_id
+      redirect_to books_path
+    end
+  end
 end

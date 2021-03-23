@@ -3,12 +3,12 @@
   <div class="container px-5 px-sm-0">
     <div class="row">
       <div class="col-md-3">
-
+      
         <%# Userinfo部分テンプレート %>
         <%= render "users/userinfo", user: @user %>
-
+        
         <%# Newbook部分テンプレート %>
-        <%= render "users/form", book: @book %>
+        <%= render "books/form", book: @book %>
 
       </div>
 
@@ -32,7 +32,7 @@
                 <% end %>
               </td>
               <td>
-                <%= book.title %>
+                <%= link_to book.title, book_path(book) %>
               </td>
               <td>
                 <%= book.body %>

@@ -16,3 +16,15 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+ #notice {
+  color: green;
+ }
+
+ div.field, div.actions {
+  margin-bottom: 10px;
+ }
+
+ #error_explanation {
+  color: red;
+ }

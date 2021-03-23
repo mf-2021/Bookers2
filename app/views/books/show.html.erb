@@ -8,7 +8,7 @@
         <%= render "users/userinfo", user: @user %>
 
         <%# Newbook部分テンプレート %>
-        <%= render "users/form", book: @book %>
+        <%= render "books/form", book: @book %>
 
       </div>
 
@@ -29,12 +29,12 @@
               </td>
               <td>
               <% if @user.id == current_user.id %>
-                <%= link_to "edit", edit_book_path(@showbook), class:"btn btn-sm btn-success" %>
+                <%= link_to "Edit", edit_book_path(@showbook), class:"btn btn-sm btn-success" %>
               <% end %>
               </td>
               <td>
               <% if @user.id == current_user.id %>
-                <%= link_to "destroy", book_path(@showbook.id), method: :delete, class: "btn btn-sm btn-danger", "data-confirm"=>"Are you sure?" %>
+                <%= link_to "Destroy", book_path(@showbook.id), method: :delete, class: "btn btn-sm btn-danger", "data-confirm"=>"Are you sure?" %>
               <% end %>
               </td>
             </tr>

@@ -16,7 +16,7 @@
         <%= render "users/userinfo", user: current_user %>
 
         <%# Newbook部分テンプレート %>
-        <%= render "users/form", book: @book %>
+        <%= render "books/form", book: @book %>
 
       </div>
 
@@ -36,7 +36,7 @@
             <tr>
               <td>
                 <%= link_to user_path(book.id) do %>
-                  <%= attachment_image_tag book.user.profile_image, :profile_image, size:"40x40", format:"jpeg", fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag book.user, :profile_image, size:"40x40", format:"jpeg", fallback: "no_image.jpg" %>
                 <% end %>
               </td>
               <td>
