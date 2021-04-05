@@ -20,13 +20,13 @@ class User < ApplicationRecord
     follower.find_by_followed_id(other_user.id)
   end
 
-  def follow!(other_user)
-    follower.create!(followed_id: other_user.id)
-  end
+  # def follow!(other_user)
+  #   follower.create!(followed_id: other_user.id)
+  # end
 
-  def unfollow!(other_user)
-    follower.find_by_followed_id(other_user.id).destroy
-  end
+  # def unfollow!(other_user)
+  #   follower.find_by_followed_id(other_user.id).destroy
+  # end
 
 
   attachment :profile_image
