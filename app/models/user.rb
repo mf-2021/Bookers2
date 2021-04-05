@@ -14,7 +14,19 @@ class User < ApplicationRecord
   has_many :followed_users, through: :follower, source: :followed
   #上記２コードの裏返し
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-  has_many :follower_users, through: :followed, source: :follower
+  has_many :followers, through: :followed, source: :follower
+
+  def following?(other_user)
+    follower.find_by_followed_id(other_user.id)
+  end
+
+  def follow!(other_user)
+    follower.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    follower.find_by_followed_id(other_user.id).destroy
+  end
 
 
   attachment :profile_image
