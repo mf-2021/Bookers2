@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # UseモデルはRelationshipクラスにfollowerを"follower_id"keyで持ってます
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   # そして、followerを通して、followed_usersを持っています。ちなみにその際のkeyとなるカラムはfollowedです。（throughとsourceは"_id"が隠れている）
-  has_many :followed_users, through: :follower, source: :followed
+  has_many :following, through: :follower, source: :followed
   #上記２コードの裏返し
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :followed, source: :follower
