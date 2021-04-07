@@ -20,13 +20,21 @@ class User < ApplicationRecord
     follower.find_by_followed_id(other_user.id)
   end
 
-  # def follow!(other_user)
-  #   follower.create!(followed_id: other_user.id)
-  # end
+  def self.search(search, word)
+    if search == "forward_match"
+      @users = User.where("name LIKE?", "#{word}%")
+    elsif search == "backward_match"
+      @users = User.where("name LIKE?", "%#{word}")
+    elsif search == "perfect_match"
+      @users = User.where("name", "#{word}")
+    elsif search == "partial_match"
+      @users = User.where("name LIKE?", "%#{word}%")
+    else
+      @users = User.all
+    end
+  end
 
-  # def unfollow!(other_user)
-  #   follower.find_by_followed_id(other_user.id).destroy
-  # end
+
 
 
   attachment :profile_image
