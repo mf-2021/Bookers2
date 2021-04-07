@@ -1,6 +1,6 @@
 <!--本を検索-->
 <% if @range == "2" %>
-<h2>Books search for "<%= "#{}" %>"</h2>
+<h2>Books search for "<%= "#{@word}" %>"</h2>
 <table class="table">
   <thead>
     <tr>
@@ -28,7 +28,7 @@
 </table>
 <% else %>
 <!--ユーザーを検索-->
-<h2>Userss search for "<%= "#{@word}" %>"</h2>
+<h2>Users search for "<%= "#{@word}" %>"</h2>
 <table class="table">
   <thead>
     <tr>
