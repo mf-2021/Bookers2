@@ -1,0 +1,2 @@
+$(".book_comments_index").html("<%= j(render "book_comments/index", {showbook: @showbook, comment_user: @comment_user}) %>");
+$(".new_comment").html("<%= j(render "book_comments/form", {showbook: @showbook, book_comment: @book_comment}) %>");

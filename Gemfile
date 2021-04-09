@@ -70,3 +70,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 
 gem 'pry-rails'
+
+gem "jquery-rails"
